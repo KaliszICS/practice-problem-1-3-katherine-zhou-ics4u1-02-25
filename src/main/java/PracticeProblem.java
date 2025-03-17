@@ -1,5 +1,4 @@
 import java.io.*; 
-import java.util.Scanner;
 public class PracticeProblem {
 
 	public static void main(String args[]) {
@@ -7,8 +6,7 @@ public class PracticeProblem {
 	}
 
 	public static String readFile(String filename){
-		Scanner input = new Scanner(System.in); 
-        String file = input.nextLine();
+        String file = "";
         FileReader inputStream = null;
         try {
             inputStream = new FileReader(filename);
