@@ -1,4 +1,5 @@
 import java.io.*; 
+import java.util.Scanner;
 public class PracticeProblem {
 
 	public static void main(String args[]) {
@@ -6,9 +7,11 @@ public class PracticeProblem {
 	}
 
 	public static String readFile(String filename){
-		String file = "";
+		Scanner input = new Scanner(System.in); 
+        String file = input.nextLine();
+        FileReader inputStream = null;
         try {
-            FileReader inputStream = new FileReader(filename);
+            inputStream = new FileReader(filename);
             int c;
             while ((c = inputStream.read()) != -1) {
                 file += (char) c;
@@ -21,6 +24,7 @@ public class PracticeProblem {
         return file;
 	}
 
+    //help
 	public static String backwardsReadFile(String filename){
 		String file = "";
         FileReader inputStream = null;
@@ -32,7 +36,7 @@ public class PracticeProblem {
             }
         } 
 		catch (IOException e) {
-        	return null; 
+        	System.out.println(e);
 
         } 
 		finally {
@@ -42,7 +46,8 @@ public class PracticeProblem {
                 }
             } 
 			catch (IOException e) {
-                System.out.println("Error closing the file: " + e.getMessage());
+                System.out.println(e);
+
             }
         }
         return file;
